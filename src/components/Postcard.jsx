@@ -20,3 +20,5 @@ const PostCard = ({ title, content, category }) => {
 }
 
 export default PostCard
+
+
