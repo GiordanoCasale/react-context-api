@@ -10,17 +10,20 @@ const posts = [
 
 const Posts = () => {
     return (
-        <div>
+        <div className="bg-light min-vh-100">
             <Navbar />
-            <div className="container mt-4">
-                <div className="row">
+            <div className="container py-5">
+                <h1 className="text-center mb-5 text-primary">Our Blog Posts</h1>
+                <div className="row g-4">
                     {posts.map(post => (
-                        <div key={post.id} className="col-md-6 mb-4">
-                            <div className="card">
+                        <div key={post.id} className="col-md-6">
+                            <div className="card h-100 shadow-sm hover-shadow transition">
                                 <div className="card-body">
-                                    <h2 className="card-title">{post.title}</h2>
-                                    <p className="card-text">{post.content}</p>
-                                    <span className="badge bg-primary">{post.category}</span>
+                                    <h2 className="card-title h4 text-secondary">{post.title}</h2>
+                                    <p className="card-text text-muted">{post.content}</p>
+                                    <span className={`badge ${post.category.toLowerCase() === 'frontend' ? 'bg-info' : 'bg-success'}`}>
+                                        {post.category}
+                                    </span>
                                 </div>
                             </div>
                         </div>
