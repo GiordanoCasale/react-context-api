@@ -7,12 +7,14 @@ const posts = [
     { id: 4, title: 'Build fast, responsive sites with Bootstrap', content: 'Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.', category: 'Frontend' },
 ];
 
-export const PostsContext = createContext();
+const PostsContext = createContext();
 
-export const PostsProvider = ({ children }) => {
+const PostsProvider = ({ children }) => {
     return (
         <PostsContext.Provider value={posts}>
             {children}
         </PostsContext.Provider>
     );
 };
+
+export { PostsContext, PostsProvider }
