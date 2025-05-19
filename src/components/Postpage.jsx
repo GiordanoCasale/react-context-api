@@ -1,11 +1,17 @@
 import React from 'react'
+import Navbar from '../Navbar'
+import PostsList from '../PostsList'
 
-const Postpage = () => {
+const PostsPage = () => {
     return (
         <div>
-            <h1>Ciao!</h1>
+            <Navbar />
+            <div className="container">
+                <h1 className="text-center my-5">Our Blog Posts</h1>
+                <PostsList />
+            </div>
         </div>
     )
 }
 
-export default Postpage
+export default PostsPage

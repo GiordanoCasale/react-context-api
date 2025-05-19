@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Postcard = ({ title, content, category }) => {
+const PostCard = ({ title, content, category }) => {
     return (
         <div className="col-md-6">
             <div className="card h-100 shadow-sm">
@@ -14,4 +14,4 @@ const Postcard = ({ title, content, category }) => {
     )
 }
 
-export default Postcard
+export default PostCard

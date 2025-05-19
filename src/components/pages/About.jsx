@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar'
 import { createContext } from 'react'
-import CountContext from '../contexts/Alertcontext'
+import CountContext from '../contexts/PostsContext'
 
 const About = () => {
     return (

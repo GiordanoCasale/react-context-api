@@ -1,24 +1,21 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Homepage from './components/pages/Homepage'
-import About from './components/pages/About'
-import Posts from './components/pages/Posts'
-import { AlertProvider } from './components/contexts/Alertcontext'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./components/pages/Homepage";
+import About from "./components/pages/About";
+import PostsPage from "./components/pages/PostsPage";
+import { PostsProvider } from "./contexts/PostsContext";
 
 function App() {
-
-
   return (
-    <AlertProvider>
+    <PostsProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/posts' element={<Posts />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/posts" element={<PostsPage />} />
         </Routes>
       </BrowserRouter>
-    </AlertProvider>
-  )
+    </PostsProvider>
+  );
 }
 
-export default App
+export default App;

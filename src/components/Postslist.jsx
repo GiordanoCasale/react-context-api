@@ -1,12 +1,15 @@
-import React from 'react'
-import Postcard from './Postcard'
+import { useContext } from 'react'
+import { PostsContext } from '../contexts/PostsContext'
+import PostCard from './PostCard'
 
-const Postslist = ({ posts }) => {
+const PostsList = () => {
+    const posts = useContext(PostsContext)
+
     return (
         <div className="container py-5">
             <div className="row g-4">
                 {posts.map(post => (
-                    <Postcard
+                    <PostCard
                         key={post.id}
                         title={post.title}
                         content={post.content}
@@ -18,4 +21,4 @@ const Postslist = ({ posts }) => {
     )
 }
 
-export default Postslist
+export default PostsList
