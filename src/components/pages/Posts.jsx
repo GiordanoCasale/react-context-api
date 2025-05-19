@@ -1,21 +1,5 @@
 import React from 'react'
-
-const Posts = () => {
-    return (
-        <div>
-            {posts.map(post => (
-                <div key={post.id}>
-                    <h2>{post.title}</h2>
-                    <p>{post.content}</p>
-                    <small>Category: {post.category}</small>
-                    <hr />
-                </div>
-            ))}
-        </div>
-    )
-}
-
-export default Posts
+import Navbar from '../Navbar';
 
 const posts = [
     { id: 1, title: 'React Basis', content: 'React apps are made out of components. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.', category: 'FrontEnd' },
@@ -23,3 +7,28 @@ const posts = [
     { id: 3, title: 'Run JavaScript Everywhere', content: 'Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.', category: 'Backend' },
     { id: 4, title: 'Build fast, responsive sites with Bootstrap', content: 'Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.', category: 'Frontend' },
 ];
+
+const Posts = () => {
+    return (
+        <div>
+            <Navbar />
+            <div className="container mt-4">
+                <div className="row">
+                    {posts.map(post => (
+                        <div key={post.id} className="col-md-6 mb-4">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h2 className="card-title">{post.title}</h2>
+                                    <p className="card-text">{post.content}</p>
+                                    <span className="badge bg-primary">{post.category}</span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Posts
