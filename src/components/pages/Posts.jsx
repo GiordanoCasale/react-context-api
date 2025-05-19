@@ -1,5 +1,8 @@
 import React from 'react'
 import Navbar from '../Navbar';
+import Postslist from '../Postslist';
+import { createContext } from 'react'
+import CountContext from '../contexts/Alertcontext'
 
 const posts = [
     { id: 1, title: 'React Basis', content: 'React apps are made out of components. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.', category: 'FrontEnd' },
@@ -10,26 +13,9 @@ const posts = [
 
 const Posts = () => {
     return (
-        <div className="bg-light min-vh-100">
+        <div>
             <Navbar />
-            <div className="container py-5">
-                <h1 className="text-center mb-5 text-primary">Our Blog Posts</h1>
-                <div className="row g-4">
-                    {posts.map(post => (
-                        <div key={post.id} className="col-md-6">
-                            <div className="card h-100 shadow-sm hover-shadow transition">
-                                <div className="card-body">
-                                    <h2 className="card-title h4 text-secondary">{post.title}</h2>
-                                    <p className="card-text text-muted">{post.content}</p>
-                                    <span className={`badge ${post.category.toLowerCase() === 'frontend' ? 'bg-info' : 'bg-success'}`}>
-                                        {post.category}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <Postslist posts={posts} />
         </div>
     )
 }
